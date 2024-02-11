@@ -1,6 +1,7 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_application_1/conatiner.dart';
 
 class Currency extends StatelessWidget {
@@ -11,44 +12,54 @@ class Currency extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       body: Container(
+        decoration: BoxDecoration(border: Border.all(color: Colors.yellow)),
         width: double.infinity,
         height: double.infinity,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Contatiner(),
-            Contatiner(),
             Container(
-              width: 200,
+              margin: EdgeInsets.all(10),
+              width: 400,
+              decoration: BoxDecoration(border: Border.all(color: Colors.red)),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   TextField(
+                    // scrollPadding: EdgeInsets.all(10),
                     decoration: InputDecoration(
                         hintText: 'enter your name',
                         fillColor: Colors.grey,
-                        filled: true),
+                        filled: true,
+                        focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: const BorderSide(
+                                color: Colors.yellowAccent, width: 2)),
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20))),
                   ),
-                  SizedBox(
-                    height: 10,
+                  const SizedBox(
+                    height: 20,
                   ),
                   TextField(
                     // cursorRadius: Radius.circular(10),
 
                     decoration: InputDecoration(
                       hintText: 'enter your name',
-                      prefixIcon: Icon(Icons.ac_unit),
+                      prefixIcon: const Icon(Icons.ac_unit),
                       filled: true,
-                      // fillColor: Colors.blueAccent,
+                      fillColor: Colors.grey,
                       focusedBorder: OutlineInputBorder(
                           borderSide:
-                              BorderSide(color: Colors.white12, width: 2),
+                              const BorderSide(color: Colors.red, width: 2),
                           borderRadius: BorderRadius.circular(20)),
                       enabledBorder: OutlineInputBorder(
                           borderSide:
-                              BorderSide(color: Colors.white12, width: 2),
+                              const BorderSide(color: Colors.white12, width: 2),
                           borderRadius: BorderRadius.circular(20)),
                     ),
+                    keyboardType: const TextInputType.numberWithOptions(
+                        decimal: true, signed: true),
                   ),
                 ],
               ),
