@@ -17,11 +17,10 @@ class _CurrencyState extends State<Currency> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
         backgroundColor: Colors.black,
         title: Center(
             child: Text(
-          "currency convertor",
+          "currency ",
           style: TextStyle(color: Colors.white),
         )),
       ),
